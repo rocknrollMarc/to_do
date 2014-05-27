@@ -5,6 +5,7 @@ var ToDo = function () {
     status: {type: 'string'}
   });
 
+  this.hasMany('Steps');
   this.validatesPresent('title');
   this.validatesLength('title', {min: 5});
 

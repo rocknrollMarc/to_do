@@ -6,6 +6,7 @@ var Step = function () {
     status: {type: 'string'}
   });
 
+  this.belongsTo('to_do')
   this.validatesPresent('title');
   this.validatesLength('title', {min: 5});
 

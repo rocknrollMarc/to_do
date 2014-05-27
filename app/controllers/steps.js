@@ -13,6 +13,13 @@ var Steps = function () {
   };
 
   this.add = function (req, resp, params) {
+    var self = this;
+    geddy.model.to_do.all(function(err, data) {
+      if (err) {
+        throw err;
+      }
+      self.respond({params: params, to_dos: data});
+    })
     this.respond({params: params});
   };
 
