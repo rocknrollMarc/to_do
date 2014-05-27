@@ -1,4 +1,10 @@
-<div class="control-group">
+<label for="title" class="control-label">To-Do for this step</label>
+<div>
+  <%- selectTag(to_dos, step.to_doId, {
+    name: 'to_doId',
+    valueField: 'id',
+    textField: 'title'
+  }); %>
   <label for="title" class="control-label">title</label>
   <div class="controls">
     <%- contentTag('input', step.title, {type:'text', class:'span6', name:'title'}) %>

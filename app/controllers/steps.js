@@ -67,7 +67,12 @@ var Steps = function () {
         throw new geddy.errors.BadRequestError();
       }
       else {
-        self.respondWith(step);
+        geddy.model.to_do.all(function(err, data) {
+          if (err) {
+            throw err;
+          }
+          self.respond({step: step, to_dos: data});
+        })
       }
     });
   };
