@@ -44,7 +44,9 @@ var ToDos = function () {
         throw new geddy.errors.NotFoundError();
       }
       else {
-        self.respondWith(toDo);
+        toDo.getSteps(function(err, data) {
+          self.respond({toDo: toDo, steps: data});
+        });
       }
     });
   };
