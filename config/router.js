@@ -40,4 +40,5 @@ router.get('/').to('Main.index');
 // });
 
 router.resource('to_dos');
+router.resource('steps');
 exports.router = router;
